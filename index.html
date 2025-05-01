@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        height: 100vh;
+        width: 100vw;
+        overflow: hidden;
+        margin: 0;
+        background: url("https://pp.userapi.com/c622123/v622123795/38c02/ZGnx3oF2laY.jpg")
+          no-repeat 100% 100%;
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+      }
+
+      .success {
+        position: fixed;
+        top: 0;
+        width: 100vw;
+        height: 100vh;
+      }
+
+      @keyframes bottomToTop {
+        0% {
+          transform: translateY(100vh) translateX(-50%);
+        }
+        100% {
+          transform: translateY(calc(100vh - 100%)) translateX(-50%);
+        }
+      }
+
+      @keyframes leftToRight {
+        0% {
+          transform: translateX(-100%) translateY(-50%);
+        }
+        100% {
+          transform: translateX(0) translateY(-50%);
+        }
+      }
+
+      @keyframes rightToLeft {
+        0% {
+          transform: translateX(100%) translateY(-50%);
+        }
+        100% {
+          transform: translateX(0) translateY(-50%);
+        }
+      }
+
+      .mangif {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 40vw;
+        max-height: 30vh;
+        animation: bottomToTop 5s ease-in-out;
+        animation-fill-mode: forwards;
+      }
+
+      .snoopdog {
+        position: absolute;
+        top: 50%;
+        height: 40vh;
+      }
+
+      .snoopdog:nth-of-type(1) {
+        animation: leftToRight 5s ease-in-out;
+        animation-fill-mode: forwards;
+        left: 0;
+      }
+
+      .snoopdog:nth-of-type(2) {
+        animation: rightToLeft 5s ease-in-out;
+        animation-fill-mode: forwards;
+        right: 0;
+      }
+
+      @keyframes topToBottom {
+        0% {
+          transform: translateY(-100%);
+        }
+        100% {
+          transform: translateY(10vh);
+        }
+      }
+
+      @keyframes textBlink {
+        0% {
+          color: pink;
+        }
+
+        50% {
+          color: blue;
+        }
+        100% {
+          color: red;
+        }
+      }
+
+      .birthdaytext {
+        left: 50%;
+        text-align: center;
+        top: 0;
+        font-size: 64px;
+        font-weight: bold;
+        animation: topToBottom 5s ease-in-out forwards, textBlink 2s infinite;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="success">
+      <div class="birthdaytext">С ДНЁМ РОЖДЕНИЯ КАБАН</div>
+      <img class="snoopdog" src="/snoopdog.gif" />
+      <img class="snoopdog" src="/snoopdog.gif" />
+      <img class="mangif" src="/mangif.gif" />
+    </div>
+  </body>
+</html>
